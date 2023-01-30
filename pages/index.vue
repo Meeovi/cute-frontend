@@ -83,6 +83,6 @@
 
 <script setup>
     useHead({
-        title: 'Elite Kids',
+        title: 'ShopnCute',
     })
 </script>

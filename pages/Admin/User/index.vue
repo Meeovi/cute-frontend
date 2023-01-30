@@ -54,22 +54,32 @@
                     <v-window v-model="tab" class="settingsRight">
                         <v-window-item value="option-1">
                             <v-card flat>
-                                <projects />
+                                <account />
                             </v-card>
                         </v-window-item>
                         <v-window-item value="option-2">
                             <v-card flat>
-                                <organizations />
+                                <orders />
                             </v-card>
                         </v-window-item>
                         <v-window-item value="option-3">
                             <v-card flat>
-                                <preferences />
+                                <loyalty />
                             </v-card>
                         </v-window-item>
                         <v-window-item value="option-4">
                             <v-card flat>
-                                <accountTokens />
+                                <reviews />
+                            </v-card>
+                        </v-window-item>
+                        <v-window-item value="option-5">
+                            <v-card flat>
+                                <wishlists />
+                            </v-card>
+                        </v-window-item>
+                        <v-window-item value="option-6">
+                            <v-card flat>
+                                <designers />
                             </v-card>
                         </v-window-item>
                     </v-window>
@@ -79,17 +89,21 @@
 </template>
 
 <script>
-    import projects from '~/components/user/projects.vue'
-    import organizations from '~/components/user/organizations.vue'
-    import preferences from '~/components/user/preferences.vue'
-    import accountTokens from '~/components/user/account-tokens.vue'
+    import account from '~/components/user/account.vue'
+    import orders from '~/components/user/orders.vue'
+    import loyalty from '~/components/user/loyalty.vue'
+    import reviews from '~/components/user/reviews.vue'
+    import wishlists from '~/components/user/wishlists.vue'
+    import designers from '~/components/user/designers.vue'
 
     export default {
         components: {
-            projects,
-            organizations,
-            preferences,
-            accountTokens,
+            account,
+            orders,
+            loyalty,
+            reviews,
+            wishlists,
+            designers,
         },
         data: () => ({
             tab: 'option-1',
