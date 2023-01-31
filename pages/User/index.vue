@@ -11,38 +11,38 @@
                             <v-icon start>
                                 mdi-account
                             </v-icon>
-                            All Projects
+                            Account
                         </v-tab>
                         <v-tab value="option-2">
                             <v-icon start>
                                 mdi-lock
                             </v-icon>
-                            Organizations
+                            Orders
                         </v-tab>
                         <h5>Account</h5>
                         <v-tab value="option-3">
                             <v-icon start>
                                 mdi-access-point
                             </v-icon>
-                            Preferences
+                            My Designers
                         </v-tab>
                         <v-tab value="option-4">
                             <v-icon start>
                                 mdi-access-point
                             </v-icon>
-                            Access Tokens
+                            My Hearts
                         </v-tab>
                         <v-tab value="option-5">
                             <v-icon start>
                                 mdi-access-point
                             </v-icon>
-                            <a href="https://www.alternatecms.com/docs/guides">Guides</a>
+                            My Reviews
                         </v-tab>
                         <v-tab value="option-6">
                             <v-icon start>
                                 mdi-access-point
                             </v-icon>
-                            <a href="https://www.alternatecms.com/docs/api">API References</a>
+                            My Wish List
                         </v-tab>
                         <v-tab value="option-7">
                             <v-icon start>
