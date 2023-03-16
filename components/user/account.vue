@@ -46,7 +46,7 @@
 </template>
 
 <script>
-    /* eslint-disable camelcase */
+    /* eslint-disable camelcase 
     import gql from "graphql-tag";
     import findManyUsers from "../../../graphql/query/findManyUsers.gql";
     // import  tax from '~/graphql/query/findManyTax'
@@ -60,10 +60,10 @@
         username
         password
   }
-}`;
+}`;*/
 
     export default {
-        data() {
+    /*    data() {
             return {
                 email: " ",
                 first_name: " ",

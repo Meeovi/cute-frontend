@@ -11,7 +11,7 @@
         <div class="col-md-12">
             <div class="media-container-row">
                 <div class="mbr-figure" style="width: 50%;">
-                    <img src="assets/images/product1.jpg" alt="Mobirise">
+                    <img src="../assets/images/product1.jpg" alt="Mobirise">
                 </div>
                 <div class="align-left aside-content">
                     <h2 class="mbr-title pt-2 mbr-fonts-style display-2">

@@ -1,78 +1,109 @@
 <template>
     <div>
-        <v-toolbar>
-            <v-col cols="9">
-                <v-toolbar-title>Payments</v-toolbar-title>
-            </v-col>
-            <v-col cols="2">
-                <createShipment />
-            </v-col>
-        </v-toolbar>
-        <v-table fixed-header height="300px" width="100%">
-            <thead>
-                <tr>
-                    <th class="text-left">
-                        Page ID
-                    </th>
-                    <th class="text-left">
-                        Page Name
-                    </th>
-                    <th class="text-left">
-                        URL
-                    </th>
-                    <th class="text-left">
-                        Meta Title
-                    </th>
-                    <th class="text-left">
-                        Created
-                    </th>
-                    <th class="text-left">
-                        Edit
-                    </th>
-                </tr>
-            </thead>
-            <tbody v-for="pages in pages" :key="pages.id">
-                <tr>
-                    <td>{{ pages.id }}</td>
-                    <td>{{ pages.title }}</td>
-                    <td>{{ pages.url_key }}</td>
-                    <td>{{ pages.meta_title }}</td>
-                    <td>{{ pages.created_at }}</td>
-                    <td><a :href="`/admin/database/${pages.id}`">
-                            <!--<editUser />--></a></td>
-                </tr>
-            </tbody>
-        </v-table>
+        <section class="mbr-section content5 cid-tyE6D0JjN0" id="content5-1w">
+
+    
+
+    
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="title col-12 col-md-8">
+            <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
+                Payments</h2>
+            
+            
+            
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="features3 cid-tyE7jZgIoa" id="features3-20">
+
+
+
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="card p-3 col-12 col-md-6 col-lg-4">
+            <div class="card-wrapper">
+                <div class="card-img">
+                    <img src="../../assets/images/background1.jpg" alt="">
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title mbr-fonts-style display-7">
+                        No Coding
+                    </h4>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        Mobirise is an easy website builder - just drop site elements to your page, add content and style it to look the way you like.
+                    </p>
+                </div>
+                <div class="mbr-section-btn text-center">
+                    <a href="#" class="btn btn-primary display-4">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card p-3 col-12 col-md-6 col-lg-4">
+            <div class="card-wrapper">
+                <div class="card-img">
+                    <img src="../../assets/images/background2.jpg" alt="">
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title mbr-fonts-style display-7">
+                        Mobile Friendly
+                    </h4>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        All sites you make with Mobirise are mobile-friendly. You don't have to create a special mobile version of your site.
+                    </p>
+                </div>
+                <div class="mbr-section-btn text-center">
+                    <a href="#" class="btn btn-primary display-4">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card p-3 col-12 col-md-6 col-lg-4">
+            <div class="card-wrapper">
+                <div class="card-img">
+                    <img src="../../assets/images/background3.jpg" alt="">
+                </div>
+                <div class="card-box">
+                    <h4 class="card-title mbr-fonts-style display-7">
+                        Unique Styles
+                    </h4>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        Mobirise offers many site blocks in several themes, and though these blocks are pre-made, they are flexible.
+                    </p>
+                </div>
+                <div class="mbr-section-btn text-center">
+                    <a href="#" class="btn btn-primary display-4">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+</section>
     </div>
 </template>
 
 <script>
-    import createShipment from '../../components/settings/addSetting/add-shipment.vue'
-    //import findManyPages from '../../../graphql/query/findManyPages.gql'
-
-    export default {
-        components: {
-            createShipment,
-            //editUser
-        },
-    /*    data() {
-            return {
-                findManyPages: [],
-            }
-        },
-        apollo: {
-            findManyPages: {
-                prefetch: true,
-                query: findManyPages
-            }
-        }, */
-    }
+export default {
+    
+}
 </script>
 
 <script setup>
     useHead({
         title: 'Payments',
-    });
-
-const { data: pages } = await useAsyncData(() => $fetch("/api/pages"));
+    })
 </script>

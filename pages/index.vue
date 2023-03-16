@@ -495,7 +495,7 @@
             <div class="container">
                 <div class="media-container-column mbr-white p-5 align-left col-lg-8 col-md-10 ml-auto">
                     <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
-                        Forgot the Cliche</h1>
+                        Forget the Cliche</h1>
 
                     <p class="mbr-text pb-3 mbr-fonts-style display-5">
                         You can take your unique fashion sense to a new level with these bold choices.</p>

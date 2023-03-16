@@ -13,7 +13,7 @@
     <div class="media-container-row">
         <div class="media-block" style="width: 49%;">
             <div class="mbr-figure">
-                <img src="assets/images/background6.jpg">
+                <img src="../assets/images/background6.jpg">
             </div>
         </div>
         <div class="step-container">

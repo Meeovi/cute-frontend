@@ -1,0 +1,1 @@
+import{u as e}from"./composables.3e7751fd.js";import{o as t,I as s}from"./entry.4bed7bce.js";const r={},n=Object.assign(r,{__name:"members",setup(a){return e({title:"Members"}),(o,_)=>(t(),s("div"))}});export{n as default};
