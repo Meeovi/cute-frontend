@@ -1,1 +1,0 @@
-import{u as e}from"./composables.3e7751fd.js";import{o as t,I as o}from"./entry.4bed7bce.js";const s={},p=Object.assign(s,{__name:"groups",setup(r){return e({title:"Groups"}),(a,_)=>(t(),o("div"))}});export{p as default};
