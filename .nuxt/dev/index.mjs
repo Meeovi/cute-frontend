@@ -6,7 +6,6 @@ import { mkdirSync } from 'fs';
 import { parentPort, threadId } from 'worker_threads';
 import { provider, isWindows } from 'file://C:/Users/Basti/OneDrive/Documents/My%20Websites/Handmade%20Sites/Javascript-Projects/Nuxt-Projects/AlternateCMS-Framework/TheMeeoviCompany-Sites/cute-frontend/node_modules/std-env/dist/index.mjs';
 import { eventHandler, setHeaders, sendRedirect, defineEventHandler, handleCacheHeaders, createEvent, getRequestHeader, getRequestHeaders, setResponseHeader, getQuery, getCookie, createError, createApp, createRouter as createRouter$1, lazyEventHandler, toNodeListener } from 'file://C:/Users/Basti/OneDrive/Documents/My%20Websites/Handmade%20Sites/Javascript-Projects/Nuxt-Projects/AlternateCMS-Framework/TheMeeoviCompany-Sites/cute-frontend/node_modules/nitropack/node_modules/h3/dist/index.mjs';
-import { useOneTap } from 'vue3-google-signin';
 import { createRenderer } from 'file://C:/Users/Basti/OneDrive/Documents/My%20Websites/Handmade%20Sites/Javascript-Projects/Nuxt-Projects/AlternateCMS-Framework/TheMeeoviCompany-Sites/cute-frontend/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import devalue from 'file://C:/Users/Basti/OneDrive/Documents/My%20Websites/Handmade%20Sites/Javascript-Projects/Nuxt-Projects/AlternateCMS-Framework/TheMeeoviCompany-Sites/cute-frontend/node_modules/@nuxt/devalue/dist/devalue.mjs';
 import { renderToString } from 'file://C:/Users/Basti/OneDrive/Documents/My%20Websites/Handmade%20Sites/Javascript-Projects/Nuxt-Projects/AlternateCMS-Framework/TheMeeoviCompany-Sites/cute-frontend/node_modules/vue/server-renderer/index.mjs';
@@ -3500,13 +3499,9 @@ const _JrUMBT = defineEventHandler(async (event) => {
   return createNav(contents, configs);
 });
 
-const _lazy_uwC8Bn = () => Promise.resolve().then(function () { return searchExample$1; });
-const _lazy_ER5FtT = () => Promise.resolve().then(function () { return google; });
 const _lazy_0un1V3 = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/api/searchExample', handler: _lazy_uwC8Bn, lazy: true, middleware: false, method: undefined },
-  { route: '/api/google', handler: _lazy_ER5FtT, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_0un1V3, lazy: true, middleware: false, method: undefined },
   { route: '', handler: _860ec6, lazy: false, middleware: false, method: undefined },
   { route: '/api/_content/query/:qid/**:params', handler: _TM0KN4, lazy: false, middleware: false, method: "get" },
@@ -3591,36 +3586,6 @@ server.listen(listenAddress, () => {
   process.on("unhandledRejection", (err) => console.error("[nitro] [dev] [unhandledRejection]", err));
   process.on("uncaughtException", (err) => console.error("[nitro] [dev] [uncaughtException]", err));
 }
-
-const searchExample = defineEventHandler(async (event) => {
-  const { serverMeilisearchClient } = event.context;
-  await serverMeilisearchClient.index("movies").addDocuments(
-    {
-      id: 999999994234,
-      title: "Batman Unmasked: The Psychology of the Dark Knight",
-      poster: "https://image.tmdb.org/t/p/w1280/jjHu128XLARc2k4cJrblAvZe0HE.jpg",
-      overview: "Delve into the world of Batman and the vigilante justice tha",
-      release_date: "2008-07-15"
-    }
-  );
-  return { myCustomResponse: "Document is on the way...." };
-});
-
-const searchExample$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  'default': searchExample
-});
-
-useOneTap({
-  onSuccess: (response) => {
-    console.log("Success:", response);
-  },
-  onError: () => console.error("Error with One Tap Login")
-});
-
-const google = /*#__PURE__*/Object.freeze({
-  __proto__: null
-});
 
 const appRootId = "__nuxt";
 
