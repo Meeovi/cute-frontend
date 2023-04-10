@@ -1,6 +1,6 @@
 <template>
     <v-footer border>
-        <v-row justify="center" no-gutters>
+        <v-row justify="center">
             <v-col class="text-center mt-4" cols="3">
                 <h6>SHOPNCUTE</h6>
                 <v-list-item title="About Us" value="about us" href="/about"></v-list-item>
