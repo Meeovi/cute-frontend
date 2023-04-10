@@ -7,7 +7,7 @@
                 </template>
                 <template v-slot:default="{ isActive }">
                     <v-card>
-                        <v-toolbar color="primary" title="Opening from the top"></v-toolbar>
+                        <v-toolbar color="red-lighten-2" title="Search the Store"></v-toolbar>
                         <v-card-text>
                             <v-text-field density="compact" variant="solo" label="Search"
                                 append-inner-icon="fas fa-search" single-line hide-details
