@@ -2,6 +2,8 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'CatbarCategories': typeof import("../components/Catbar/categories.vue")['default']
+    'CommerceBillingaddress': typeof import("../components/Commerce/billingaddress.vue")['default']
+    'CommerceShippingaddress': typeof import("../components/Commerce/shippingaddress.vue")['default']
     'EditorsEditor': typeof import("../components/Editors/editor.vue")['default']
     'FooterNav': typeof import("../components/FooterNav.vue")['default']
     'MenusProfilebar': typeof import("../components/Menus/profilebar.vue")['default']
@@ -76,6 +78,8 @@ declare module 'vue' {
     'Html': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyCatbarCategories': typeof import("../components/Catbar/categories.vue")['default']
+    'LazyCommerceBillingaddress': typeof import("../components/Commerce/billingaddress.vue")['default']
+    'LazyCommerceShippingaddress': typeof import("../components/Commerce/shippingaddress.vue")['default']
     'LazyEditorsEditor': typeof import("../components/Editors/editor.vue")['default']
     'LazyFooterNav': typeof import("../components/FooterNav.vue")['default']
     'LazyMenusProfilebar': typeof import("../components/Menus/profilebar.vue")['default']
@@ -153,6 +157,8 @@ declare module 'vue' {
 }
 
 export const CatbarCategories: typeof import("../components/Catbar/categories.vue")['default']
+export const CommerceBillingaddress: typeof import("../components/Commerce/billingaddress.vue")['default']
+export const CommerceShippingaddress: typeof import("../components/Commerce/shippingaddress.vue")['default']
 export const EditorsEditor: typeof import("../components/Editors/editor.vue")['default']
 export const FooterNav: typeof import("../components/FooterNav.vue")['default']
 export const MenusProfilebar: typeof import("../components/Menus/profilebar.vue")['default']
@@ -227,6 +233,8 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyCatbarCategories: typeof import("../components/Catbar/categories.vue")['default']
+export const LazyCommerceBillingaddress: typeof import("../components/Commerce/billingaddress.vue")['default']
+export const LazyCommerceShippingaddress: typeof import("../components/Commerce/shippingaddress.vue")['default']
 export const LazyEditorsEditor: typeof import("../components/Editors/editor.vue")['default']
 export const LazyFooterNav: typeof import("../components/FooterNav.vue")['default']
 export const LazyMenusProfilebar: typeof import("../components/Menus/profilebar.vue")['default']
