@@ -6,6 +6,7 @@
             <v-tab><a href="/Commerce/reviews">My Reviews</a></v-tab>
             <v-tab><a href="/Commerce/orders">Orders</a></v-tab>
             <v-tab><a href="/Commerce/returns">Returns</a></v-tab>
+            <v-tab><a href="/Commerce/payments">Payments</a></v-tab>
             <v-tab><a href="/Commerce/loyalty">Loyalty</a></v-tab>
             <v-tab><a href="/Commerce/receipts">Receipts</a></v-tab>
             <v-tab><a href="/Commerce/wishlists">Wishlists</a></v-tab>

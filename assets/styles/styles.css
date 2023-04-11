@@ -24,6 +24,10 @@ body {
     width: 100%
 }
 
+.paymentPage {
+    padding: 15px;
+}
+
 .accountForm  {
     padding: 25px !important;
 }
