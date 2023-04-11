@@ -1,6 +1,7 @@
 <template>
     <div>
-        <form method="post" @v-on:submit.prevent="addAccessToken()">
+        <profilebar />
+        <form method="post" @v-on:submit.prevent="addAccessToken()" class="accountForm">
             <v-row>
                 <v-col cols="12">
                     <v-text-field v-model="first_name" type="text" label="First Name" required></v-text-field>
@@ -29,6 +30,7 @@
 </template>
 
 <script>
+    import profilebar from '../../../components/Menus/profilebar.vue'
     /* 
     import gql from "graphql-tag";
     import findManyUsers from "~/graphql/query/findManyUsers";
@@ -42,6 +44,7 @@
 }`;*/
 
     export default {
+        components: { profilebar },
         /*      data() {
                   return {
                       email: " ",

@@ -77,13 +77,13 @@
               </v-btn>
             </template>
             <v-list>
-              <v-list-item title="My Account" value="my account" href="/user/"></v-list-item>
-              <v-list-item title="My Orders" value="my Orders" href="/user/"></v-list-item>
-              <v-list-item title="My Loyalty" value="my Loyalty" href="/user/"></v-list-item>
-              <v-list-item title="My Reviews" value="my Reviews" href="/user/"></v-list-item>
-              <v-list-item title="My Hearts" value="my Hearts" href="/user/"></v-list-item>
-              <v-list-item title="My Wish List" value="my Wish List" href="/user/"></v-list-item>
-              <v-list-item title="My Designers" value="my Designers" href="/user/"></v-list-item>
+              <v-list-item title="My Account" value="my account" href="/admin/user/"></v-list-item>
+              <v-list-item title="My Orders" value="my Orders" href="/commerce/orders"></v-list-item>
+              <v-list-item title="My Loyalty" value="my Loyalty" href="/commerce/loyalty"></v-list-item>
+              <v-list-item title="My Reviews" value="my Reviews" href="/commerce/reviews"></v-list-item>
+              <v-list-item title="My Hearts" value="my Hearts" href="/commerce/hearts"></v-list-item>
+              <v-list-item title="My Wish List" value="my Wish List" href="/commerce/wishlists"></v-list-item>
+              <v-list-item title="My Designers" value="my Designers" href="/commerce/designers"></v-list-item>
               <v-list-item title="Logout" value="logout" href="/logout"></v-list-item>
             </v-list>
           </v-menu>

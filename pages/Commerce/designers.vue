@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-12 text-row col-md-6">
                             <h2 class="align-center pb-3 mbr-fonts-style display-2">
-                                Payments</h2>
+                                Designers</h2>
                         </div>
                         <div class="card px-3 py-4 col-12 col-md-6 col-lg-4 col-xl-3">
                             <div class="card-wrapper">
@@ -142,6 +142,6 @@
 
 <script setup>
     useHead({
-        title: 'Payments',
+        title: 'Designers',
     })
 </script>

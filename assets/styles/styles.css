@@ -24,8 +24,8 @@ body {
     width: 100%
 }
 
-.leftnav .v-col {
-    
+.accountForm  {
+    padding: 25px !important;
 }
 
 /******************* Main Section CSS *********/

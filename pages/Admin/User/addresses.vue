@@ -1,5 +1,6 @@
 <template>
     <div>
+      <profilebar />
       <v-toolbar color="transparent">
         <v-row>
             <v-col cols="9">
@@ -33,10 +34,11 @@
 </template>
 
 <script>
+import profilebar from '../../../components/Menus/profilebar.vue'
 import addAddress from './addAccount/add-address.vue'
 
     export default {
-        components: { addAddress },
+        components: { addAddress, profilebar },
         data() {
             return {
                 desserts: [{
