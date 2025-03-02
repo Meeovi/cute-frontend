@@ -1,9 +1,9 @@
 {
-  "_hash": "1h4w6jwRDU",
+  "_hash": "rtnu0i5wdaW8Cmhg1zULktfjHK1pbkUf_BDoEv8DIXY",
   "project": {
-    "rootDir": "C:/Users/Basti/OneDrive/Documents/My Websites/Handmade Sites/Javascript-Projects/Nuxt-Projects/AlternateCMS-Framework/TheMeeoviCompany-Sites/cute-frontend"
+    "rootDir": "C:/Users/Basti/OneDrive/Documents/My_Websites/Handmade_Sites/Javascript-Projects/Nuxt-Projects/AlternateCMS-Framework/TheMeeoviCompany-Sites/cute-frontend"
   },
   "versions": {
-    "nuxt": "3.3.3"
+    "nuxt": "3.15.4"
   }
 }

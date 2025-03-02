@@ -43,31 +43,22 @@
       </div>
 
       <v-spacer></v-spacer>
-      <v-app-bar-title><a class="logobrand" href="/">
-          <v-icon color="pink" start icon="fas fa-shopping-bag"></v-icon>ShopnCute
-        </a></v-app-bar-title>
+      <v-app-bar-title><headerNav /></v-app-bar-title>
 
       <v-spacer></v-spacer>
 
       <div class="d-flex align-center flex-column flex-sm-row fill-height">
-        <!--  <v-col>
-          <v-btn :prepend-icon="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'" @click="onClick"></v-btn>
-        </v-col>-->
         <v-col>
-          <v-menu :location="location" transition="slide-y-transition">
-            <template v-slot:activator="{ props }">
-              <v-btn variant="flat" v-bind="props" href="/hearts">
-                <v-icon color="pink" start icon="fas fa-heart"></v-icon>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item title="" value="" href="/"></v-list-item>
-              <v-divider></v-divider>
-              <v-list-item title="All Notifications" value="notifications" href="/user/notifications">
-              </v-list-item>
-            </v-list>
-          </v-menu>
+          <v-btn @click="toggleDark()" variant="text">
+            <v-icon>
+              {{ isDark ? 'fas fa-moon' : 'fas fa-sun' }}
+            </v-icon>
+          </v-btn>
         </v-col>
+        
+        <v-col>
+          <search />
+        </v-col><!--  -->
 
         <v-col>
           <v-menu :location="location" transition="slide-y-transition">
@@ -77,14 +68,7 @@
               </v-btn>
             </template>
             <v-list>
-              <v-list-item title="My Account" value="my account" href="/admin/user/"></v-list-item>
-              <v-list-item title="My Orders" value="my Orders" href="/commerce/orders"></v-list-item>
-              <v-list-item title="My Loyalty" value="my Loyalty" href="/commerce/loyalty"></v-list-item>
-              <v-list-item title="My Reviews" value="my Reviews" href="/commerce/reviews"></v-list-item>
-              <v-list-item title="My Hearts" value="my Hearts" href="/commerce/hearts"></v-list-item>
-              <v-list-item title="My Wish List" value="my Wish List" href="/commerce/wishlists"></v-list-item>
-              <v-list-item title="My Designers" value="my Designers" href="/commerce/designers"></v-list-item>
-              <v-list-item title="Logout" value="logout" href="/logout"></v-list-item>
+              <accountmenu />
             </v-list>
           </v-menu>
         </v-col>
@@ -106,59 +90,41 @@
   </v-app>
 </template>
 
-<script>
-  import search from '../components/Search/search.vue'
-  import catbar from '../components/Catbar/categories.vue'
-
-  export default {
-    data() {
-      return {
-        components: {
-          search,
-          catbar
-        },
-        drawer: null,
-        location: 'bottom',
-        items: [{
-            title: 'Home',
-            icon: 'fas fa-home'
-          },
-          {
-            title: 'Content Manager',
-            icon: 'fas fa-feather-pointed'
-          },
-          {
-            title: 'Settings',
-            icon: 'fas fa-gear'
-          },
-        ],
-        rail: true,
-        loaded: false,
-        loading: false,
-      }
-    },
-
-    methods: {
-      onClick() {
-        this.loading = true
-
-        setTimeout(() => {
-          this.loading = false
-          this.loaded = true
-        }, 2000)
-      },
-    },
-  }
-</script>
-
 <script setup>
   import {
     ref
   } from 'vue'
+  import {
+    useDark,
+    useToggle
+  } from '@vueuse/core'
+  import {
+    useTheme
+  } from 'vuetify'
+  import search from '~/components/search/search.vue'
+  import headerNav from '~/components/menus/header.vue'
+  import FooterNav from '~/components/menus/FooterNav.vue'
+  import catbar from '~/components/menus/catbar.vue'
+  import accountmenu from '~/components/Menus/accountmenu.vue'
 
-  const theme = ref('light')
+  const location = ref('bottom')
+  const theme = useTheme()
+  const isDark = useDark()
+  const toggleDark = useToggle(isDark)
+  const drawer = ref(null);
 
-  function onClick() {
-    theme.value = theme.value === 'light' ? 'dark' : 'light'
-  };
+  // Sync Vuetify theme with dark mode
+  watch(isDark, (dark) => {
+    theme.global.name.value = dark ? 'dark' : 'light'
+  }, {
+    immediate: true
+  })
+
+useHead({
+  title: 'ShopnCute',
+  htmlAttrs: {
+    // uncomment this line to simulate dark mode
+    // class: 'dark',
+  },
+});
 </script>

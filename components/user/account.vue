@@ -1,132 +1,85 @@
 <template>
-    <div>
-        <form method="post" @v-on:submit.prevent="addAccessToken()">
-            <v-table class="table">
-                <tbody>
-                    <tr>
-                        <td style="text-align: right;">First Name</td>
-                        <td>
-                            <v-text-field v-model="first_name" type="text" required></v-text-field>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: right;">Last Name</td>
-                        <td>
-                            <v-text-field v-model="last_name" type="text" required></v-text-field>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: right;">Email Address</td>
-                        <td>
-                            <v-text-field v-model="email" type="email" name="email" required></v-text-field>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: right;">Username</td>
-                        <td>
-                            <v-text-field v-model="username" type="username" name="username" required></v-text-field>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: right;">Password</td>
-                        <td>
-                            <v-text-field v-model="password" type="password" name="password" required></v-text-field>
-                        </td>
-                    </tr>
-                </tbody>
-            </v-table>
-            <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="blue-darken-1" variant="text">
-                    Save
-                </v-btn>
-            </v-card-actions>
-        </form>
-    </div>
+    <form @submit.prevent="submit">
+        <v-text-field v-model="name.value.value" :counter="10" :error-messages="name.errorMessage.value"
+            label="Name"></v-text-field>
+
+        <v-text-field v-model="phone.value.value" :counter="7" :error-messages="phone.errorMessage.value"
+            label="Phone Number"></v-text-field>
+
+        <v-text-field v-model="email.value.value" :error-messages="email.errorMessage.value"
+            label="E-mail"></v-text-field>
+
+        <v-select v-model="select.value.value" :error-messages="select.errorMessage.value" :items="items"
+            label="Select"></v-select>
+
+        <v-checkbox v-model="checkbox.value.value" :error-messages="checkbox.errorMessage.value" label="Option"
+            type="checkbox" value="1"></v-checkbox>
+
+        <v-btn class="me-4" type="submit">
+            Submit
+        </v-btn>
+
+        <v-btn @click="handleReset">
+            clear
+        </v-btn>
+    </form>
 </template>
 
-<script>
-    /* eslint-disable camelcase 
-    import gql from "graphql-tag";
-    import findManyUsers from "../../../graphql/query/findManyUsers.gql";
-    // import  tax from '~/graphql/query/findManyTax'
+<script setup>
+    import {
+        ref
+    } from 'vue'
+    import {
+        useField,
+        useForm
+    } from 'vee-validate'
 
-    const ADD_USER = gql `
-    mutation ($first_name:String!,$last_name:String!,$username:String!,$email:String!, $password: String!){
-    createOneUsers(data: {first_name: $first_name, last_name: $last_name, email: $email, username: $username, password: $password}) {
-        email
-        first_name
-        last_name
-        username
-        password
-  }
-}`;*/
+    const {
+        handleSubmit,
+        handleReset
+    } = useForm({
+        validationSchema: {
+            name(value) {
+                if (value?.length >= 2) return true
 
-    export default {
-    /*    data() {
-            return {
-                email: " ",
-                first_name: " ",
-                last_name: " ",
-                username: " ",
-                password: " ",
-            }
-        },
-        methods: {
-            async addUser() {
-                const first_name = this.first_name;
-                const last_name = this.last_name;
-                const email = this.email;
-                const username = this.username;
-                const password = this.password;
-                await this.$apollo.mutate({
-                    mutation: ADD_USER,
-                    variables: {
-                        first_name,
-                        last_name,
-                        email,
-                        username,
-                        password
-                    },
-                    update: (cache, {
-                        data: {
-                            insertStaffMember
-                        }
-                    }) => {
-                        // Read data from cache for this query
-                        try {
-                            const insertedStaffMember = insertStaffMember.returning;
-                            console.log(insertedStaffMember)
-                            cache.writeQuery({
-                                query: findManyUsers
-                            })
-                        } catch (err) {
-                            console.error(err)
-                        }
-                    }
-                }).then(() => {
-                    this.$router.push({
-                        path: '../../system/staff-members'
-                    })
-                }).catch(err => console.log(err));
-                this.first_name = ' ';
-                this.last_name = ' ';
-                this.email = ' ';
-                this.username = ' ';
-                this.password = ' ';
+                return 'Name needs to be at least 2 characters.'
+            },
+            phone(value) {
+                if (/^[0-9-]{7,}$/.test(value)) return true
+
+                return 'Phone number needs to be at least 7 digits.'
+            },
+            email(value) {
+                if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
+
+                return 'Must be a valid e-mail.'
+            },
+            select(value) {
+                if (value) return true
+
+                return 'Select an item.'
+            },
+            checkbox(value) {
+                if (value === '1') return true
+
+                return 'Must be checked.'
             },
         },
-        /* apollo: {
-            tax: {
-            prefetch: true,
-            query: tax
-            } 
-        }, */
-    }
-</script>
+    })
+    const name = useField('name')
+    const phone = useField('phone')
+    const email = useField('email')
+    const select = useField('select')
+    const checkbox = useField('checkbox')
 
-<script setup>
-    useHead({
-        title: 'Account',
-    });
+    const items = ref([
+        'Item 1',
+        'Item 2',
+        'Item 3',
+        'Item 4',
+    ])
+
+    const submit = handleSubmit(values => {
+        alert(JSON.stringify(values, null, 2))
+    })
 </script>
