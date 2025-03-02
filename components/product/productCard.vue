@@ -4,8 +4,11 @@
       <div class="card">
         <div class="card-wrapper">
           <div class="card-img">
-            <NuxtImg :src="product?.assets?.source" :alt="product.name" />
+            <NuxtImg style="width: 250px; height: 250px;" :src="product?.featuredAsset?.source" :alt="product.name" />
           </div>
+
+          <br>
+          
           <div class="card-box">
             <h4 class="card-title mbr-fonts-style display-5">
               {{ product?.name }}

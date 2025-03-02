@@ -1,15 +1,10 @@
 <template>
     <div>
-        <section data-bs-version="5.1" class="mbr-section features20 cid-txNnCwzel4" id="features20-4t"
-            data-sortbtn="btn-primary">
+        <section data-bs-version="5.1" data-sortbtn="btn-primary" style="background-color: transparent; margin-top: 30px;">
             <div class="container-fluid">
                 <h2 class="mbr-section-title align-left mbr-fonts-style display-5">
                     Related Products
                 </h2>
-                <div class="underline align-left pb-3">
-                    <div class="line"></div>
-                </div>
-
                 <!-- Loading State -->
                 <div v-if="loading" class="text-center">
                     <v-progress-circular indeterminate></v-progress-circular>
@@ -18,7 +13,7 @@
                 <!-- Products Display -->
                 <v-sheet v-else class="mx-auto">
                     <v-slide-group v-model="model" class="pa-4" show-arrows>
-                        <v-slide-group-item v-for="product in result" :key="product.id"
+                        <v-slide-group-item v-for="product in result?.products?.items" :key="product.id"
                             v-slot="{ isSelected, toggle, selectedClass }">
                             <productCard :product="product" :class="['ma-4', selectedClass]" @click="toggle" />
 
@@ -44,7 +39,7 @@
   import {
     useQuery
   } from '@vue/apollo-composable'
-  import products from '~/graphql/queries/products'
+  import { products } from '~/graphql/queries/products'
 
   const model = ref(null);
   const {
