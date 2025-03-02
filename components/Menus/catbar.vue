@@ -1,9 +1,9 @@
 <template>
     <v-card variant="text" class="catBar">
         <v-tabs v-model="tab" :bg-color="catbar?.color" :color="catbar?.colortext" align-tabs="center">
-            <div v-for="(menu, index) in result?.items" :key="index">
-                <v-tab :value="menu?.value">
-                    <NuxtLink :style="`color: ${catbar?.colortext} !important`" :to="`/categories/${menu?.slug}`">{{ menu?.name }}</NuxtLink>
+            <div v-for="(menu, index) in result" :key="index">
+                <v-tab v-for="(menu, index) in menu?.items" :key="index">
+                    <NuxtLink :to="`/categories/${menu?.slug}`">{{ menu?.name }}</NuxtLink>
                 </v-tab>
             </div>
         </v-tabs>
@@ -26,7 +26,6 @@
         $directus,
         $readItem
     } = useNuxtApp()
-    const route = useRoute()
 
     const {
         data: catbar

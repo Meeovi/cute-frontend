@@ -1226,7 +1226,7 @@ const _nmeBmkbg3i = defineNitroPlugin(async (nitroApp) => {
   await nitroApp.hooks.callHook("nuxt-security:ready");
 });
 
-const sriHashes = {"/_nuxt/builds/meta/dev.json":"sha384-ToVdSApkpvfHfUs1NwdsW1xwPNajcubl/ztDTyBIObseZb3XAsPr9ZMpJUO5kN5Y","/_nuxt/builds/latest.json":"sha384-NHveQGmBsbSr2FHIZ+dvzJ5bNIWIOJEqfCX0GRj06Pcnufdeqcf6hj2e5XzRWFmJ"};
+const sriHashes = {"/_nuxt/builds/meta/dev.json":"sha384-NMa3x6W7UhxTTdtnIgl02jpzBjmmTIoJfzWu0Urh/MGh9+r2I2LBW4p+Y5KgLbu4","/_nuxt/builds/latest.json":"sha384-wnvAsHrW3ABUgVSscDWmzHmD8ru3XNUUOWz8nGNz59STBvKxuSCMp5tp8asO6kUd"};
 
 const SCRIPT_RE$1 = /<script((?=[^>]+\bsrc="([^"]+)")(?![^>]+\bintegrity="[^"]+")[^>]+)(?:\/>|><\/script>)/g;
 const LINK_RE$1 = /<link((?=[^>]+\brel="(?:stylesheet|preload|modulepreload)")(?=[^>]+\bhref="([^"]+)")(?![^>]+\bintegrity="[\w\-+/=]+")[^>]+)>/g;
